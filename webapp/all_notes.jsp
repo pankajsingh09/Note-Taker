@@ -40,12 +40,14 @@
     <p class="card-text">
     <%= note.getContent() %>
     </p>
-    <p>
     
-    <b class=" text-primary text-center">
-    <%=note.getAddedDate() %>
-    </b>
-    </p>
+    
+   <% String date=(String)note.getAddedDate().toString(); %>
+    <div class=" text-primary text-right">
+    <h5>
+    <%=date.substring(0, 19) %>
+    </h5>
+    </div>
     
     <div class="container text-center mt-3">
     <a href="DeleteServlet?note_id=<%= note.getId() %>" class="btn btn-danger mr-2">Delete</a>
